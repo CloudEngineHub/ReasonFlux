@@ -165,19 +165,3 @@ class ReasonFlux:
             "trajectory": self.navigator.reasoning_flow,
             "evaluation": self.navigator.get_evaluation_metrics()
         }
-
-
-if __name__ == "__main__":
-    reason_engine = ReasonFlux(
-        navigator_path='../models',
-        template_matcher_path='/data/Research/yzc/models/jina-embeddings-v3',
-        inference_path='../models',
-        template_path='/data/Research/yzc/ReasonFlow/src/template_catalog.json'
-    )
-    
-    sample_problem = """
-    Given a sequence {{aₙ}} satisfying a₁=1, and a_{{n+1}}=2aₙ + (-1)ⁿ, 
-    find the general term formula aₙ.
-    """
-    
-    reason_engine.reason(sample_problem)

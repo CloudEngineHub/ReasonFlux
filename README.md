@@ -1,6 +1,6 @@
 <div align="center">
   <h1>ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates</h1>
-  <p>Revolutionary inference-scaling paradigm with a hierarchical RL algorithm: enpowering a 32B model with 500 templates to outperform o1-preview and DeepSeek-V3 in reasoning tasks.
+  <p>Revolutionary inference-scaling paradigm with a hierarchical RL algorithm: enpowering a 32B model with 500 thought templates to outperform o1-preview and DeepSeek-V3 in reasoning tasks.
  </p>
 </div>
 
@@ -15,9 +15,9 @@
 <div align="center">Performance Comparison on Various Math Reasoning Benchmarks (Pass@1 Accuracy)</div>
 
 
-## News
+## Updates
 
-- [2025/2/11] We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux. More data, model weights, and training scripts for template trajectory optimization will become available soon.
+- [2025/2/11] We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux. More data, model weights, and training scripts for template trajectory optimization will be released.
 
 ## Links
 
@@ -105,7 +105,7 @@ You can test your trained model after the SFT stage to see if it could retrieve 
 
 ## Performance
 
-To evaluate the complex reasoning capabilities, we choose a broad set of challenging reasoning benchmarks, including MATH, AIME 2024, AMC 2023, OlympiadBench, and GaoKao (Chinese College Entrance Exam) En 2023. These benchmarks comprehensively evaluate mathematical reasoning capabilities, and they are all competition-level and Olympic-level problems. Moreover, AIME 2024 and AMC 2023 are highly challenging competition benchmarks, which are of limited sizes of test samples in AMC and AIME and the results are averaged over 16 runs.
+To evaluate the complex reasoning capabilities, we choose a broad set of challenging reasoning benchmarks, including MATH, AIME 2024, AMC 2023, OlympiadBench, and GaoKao (Chinese College Entrance Exam) En 2023. These benchmarks comprehensively evaluate mathematical reasoning capabilities, and they are all competition-level and Olympic-level problems. 
 
 | Model                           | MATH     | AIME 2024 | AMC 2023                | Olympiad Bench | Gaokao En 2023 |
 | :------------------------------ | :------- | :-------- | :---------------------- | :------------- | :------------- |
@@ -140,9 +140,12 @@ To evaluate the complex reasoning capabilities, we choose a broad set of challen
 | Sky-T1-32B-preview              | 86.4     | 43.3      | -                       | 59.8           | -              |
 | **ReasonFlux-32B**              | **91.2** | **56.7**  | **85.0**                | **63.3**       | **83.6**       |
 
-## Example
+## Reasoning Example
 
 ![example](figs/example.png)
+
+## Preliminary Work
+We build our ReasonFlux mainly based on some preliminary works, such as [Buffer of Thoughts](https://github.com/YangLing0818/buffer-of-thought-llm) and [SuperCorrect](https://github.com/YangLing0818/SuperCorrect-llm).
 
 ## Citation
 
@@ -152,19 +155,5 @@ title={ReasonFlux: HIerarchical LLM Reasoning via Scaling Thought Templates}
   author={Yang, Ling and Yu, Zhaochen and Cui, Bin and Wang, Mengdi},
   journal={arXiv preprint arXiv:2502.xxx},
   year={2025}
-}
-
-@inproceedings{yang2025supercorrect,
-title={SuperCorrect: Supervising and Correcting Language Models with Error-Driven Insights}
-  author={Yang, Ling and Yu, Zhaochen and Zhang, Tianjun and Xu, Minkai and Gonzalez, Joseph E and Cui, Bin and Yan, Shuicheng},
-  booktitle={International Conference on Learning Representations},
-  year={2025}
-}
-
-@article{yang2024buffer,
-  title={Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models},
-  author={Yang, Ling and Yu, Zhaochen and Zhang, Tianjun and Cao, Shiyi and Xu, Minkai and Zhang, Wentao and Gonzalez, Joseph E and Cui, Bin},
-  journal={Advances in Neural Information Processing Systems},
-  year={2024}
 }
 ```

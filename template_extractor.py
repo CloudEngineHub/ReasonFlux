@@ -274,19 +274,3 @@ class TemplateMatcher:
                     'confidence': best_match[2]
                 }
         return None
-
-
-# Example usage
-if __name__ == "__main__":
-    # First initialization will generate cache
-    matcher = TemplateMatcher(cache_dir='model_cache')
-
-    # Subsequent initializations will automatically load cache
-    matcher_fast = TemplateMatcher(cache_dir='model_cache')
-
-    result = matcher_fast.search_template(
-        chapter_query="三角函数",
-        section_query="三角函数的图象与性质",
-        method_query="正、余弦函数的单调性的应用"
-    )
-    print(result)
