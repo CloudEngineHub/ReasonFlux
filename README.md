@@ -19,7 +19,7 @@ This repository provides resources for the paper ["ReasonFlux: Hierarchical LLM 
 
 ## Updates
 
-- [2025/2/11] We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux. More data, model weights, and training scripts for template trajectory optimization will be released.
+- [2025/2/11] We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux.
 
 ## Links
 
