@@ -12,7 +12,9 @@
 | GaokaoEn 2023  |      **83.6**      |        -        |         71.4          |        78.4        |        65.3         |    67.5    |
 | AMC2023        |      **85.0**      |      80.0       |         90.0          |        95.0        |          -          |    47.5    |
 
-<div align="center">Performance Comparison on Various Math Reasoning Benchmarks (Pass@1 Accuracy)</div>
+
+This repository provides resources for the paper ["ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates"](https://arxiv.org/abs/2502.06772).
+
 
 
 ## Updates
@@ -150,7 +152,7 @@ We build our ReasonFlux mainly based on some preliminary works, such as [Buffer 
 @article{yang2025reasonflux,
 title={ReasonFlux: HIerarchical LLM Reasoning via Scaling Thought Templates}
   author={Yang, Ling and Yu, Zhaochen and Cui, Bin and Wang, Mengdi},
-  journal={arXiv preprint arXiv:2502.xxx},
+  journal={arXiv preprint arXiv:2502.06772},
   year={2025}
 }
 ```
