@@ -19,6 +19,7 @@ This repository provides resources for the paper ["ReasonFlux: Hierarchical LLM 
 
 ## Updates
 
+- [2025/2~2025/5] We currently utilize our ReasonFlux to enhance reasoning capabilities of DeepSeek-R1, stay tuned for more updates.
 - [2025/2/11] We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux.
 
 ## Links
