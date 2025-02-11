@@ -21,7 +21,7 @@
 
 ## Links
 
-- **[SFT Data of ReasonFlux]()**
+- **[SFT Data of ReasonFlux](https://huggingface.co/datasets/Gen-Verse/ReasonFlux_SFT_15k)**
 
 ## Getting Started
 
@@ -31,9 +31,6 @@ cd ReasonFlux
 conda create -n ReasonFlux python==3.9
 conda activate ReasonFlux
 pip install -r requirements.txt
-cd train
-git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
-cd ..
 ```
 
 ### Training
@@ -53,8 +50,8 @@ llamafactory-cli train \
     --finetuning_type full \
     --template qwen \
     --flash_attn auto \
-    --dataset_dir LLaMA-Factory/data \
-    --dataset TempX1 \
+    --dataset_dir train/LLaMA-Factory/data \
+    --dataset ReasonFlux \
     --cutoff_len 2048 \
     --learning_rate 2e-05 \
     --num_train_epochs 3.0 \
@@ -88,7 +85,7 @@ reasonflux = ReasonFlux(navigator_path='path-to-navigator',
                         template_matcher_path='jinaai/jina-embeddings-v3',
                  		inference_path='path-to-infernece-model',
                         template_path='template_library.json')
-problem = """Given a sequence {aₙ} satisfying a₁=1, and a_{n+1}=2aₙ + (-1)ⁿ, find the general term formula aₙ."""
+problem = """Given a sequence {aₙ} satisfying a₁=3, and aₙ₊₁=2aₙ+5 (n≥1), find the general term formula aₙ"""
 ```
 
 `navigator_path` is the path to the navigator, you can put the path to your trained LLM after SFT-stage here.

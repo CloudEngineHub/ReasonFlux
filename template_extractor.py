@@ -15,8 +15,8 @@ class TemplateMatcher:
     It uses a pre-trained sentence embedding model for semantic encoding and caching for efficiency.
     """
     def __init__(self,
-                 model_name="jina-embeddings-v3",
-                 catalog_path='template_catalog.json',
+                 model_name="jinaai/jina-embeddings-v3",
+                 catalog_path='data/template_library.json',
                  cache_dir='.cache'):
         """
         Initializes the TemplateMatcher.
@@ -34,10 +34,8 @@ class TemplateMatcher:
         # Ensure cache directory exists
         os.makedirs(self.cache_dir, exist_ok=True)
 
-        # Try to load pre-computed embeddings from cache
-        if not self._try_load_cache():
-            self._build_index()
-            self._save_cache()
+        self._build_index()
+        self._save_cache()
 
     def _load_catalog(self, path):
         """

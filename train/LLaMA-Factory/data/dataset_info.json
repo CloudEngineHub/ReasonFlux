@@ -660,5 +660,13 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "ReasonFlux":{
+    "file_name":"path_to_file.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
   }
 }

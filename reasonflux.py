@@ -58,7 +58,7 @@ class ReasonFlux:
         else:
             self.inference_llm = InferenceLLM(inference_path)
 
-    def reason(self, problem: str, max_iter: int = 10) -> Dict:
+    def reason(self, problem: str, max_iter: int = 10):
         """Execute the complete reasoning workflow.
         
         Args:
@@ -112,8 +112,6 @@ class ReasonFlux:
                 current_solution=current_reasoning
             )
 
-        return self._compile_results()
-
     def _plan_initial_trajectory(self, problem: str) -> List[str]:
         """Generate initial reasoning trajectory.
         
@@ -154,14 +152,3 @@ class ReasonFlux:
             [{'role': 'system', 'content': adjustment_prompt}]
         )
 
-    def _compile_results(self) -> Dict:
-        """Compile final results from reasoning process.
-        
-        Returns:
-            Dict containing answer, trajectory, and evaluation
-        """
-        return {
-            "answer": self.navigator.instantiation[-1],
-            "trajectory": self.navigator.reasoning_flow,
-            "evaluation": self.navigator.get_evaluation_metrics()
-        }
