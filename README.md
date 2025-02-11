@@ -150,7 +150,7 @@ We build our ReasonFlux mainly based on some preliminary works, such as [Buffer 
 
 ```bash
 @article{yang2025reasonflux,
-title={ReasonFlux: HIerarchical LLM Reasoning via Scaling Thought Templates}
+  title={ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates},
   author={Yang, Ling and Yu, Zhaochen and Cui, Bin and Wang, Mengdi},
   journal={arXiv preprint arXiv:2502.06772},
   year={2025}
