@@ -13,6 +13,10 @@
 | AMC2023        |      **85.0**      |      80.0       |         90.0          |        95.0        |          -          |    47.5    |
 
 
+<p align="center">
+<img src="image.png" width=80%>
+</p>
+
 This repository provides resources for the paper ["ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates"](https://arxiv.org/abs/2502.06772).
 
 - [Updates](#updates)
