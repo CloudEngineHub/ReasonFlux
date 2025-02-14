@@ -15,14 +15,22 @@
 
 This repository provides resources for the paper ["ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates"](https://arxiv.org/abs/2502.06772).
 
-
+- [Updates](#updates)
+- [Dataset Links](#dataset-links)
+- [Getting Started](#getting-started)
+  - [Training](#training)
+  - [Inference](#inference)
+- [Performance](#performance)
+- [Reasoning Example](#reasoning-example)
+- [Preliminary Work](#preliminary-work)
+- [Citation](#citation)
 
 ## Updates
 
 - [2025/2~2025/5] We currently utilize our ReasonFlux to enhance reasoning capabilities of DeepSeek-R1, stay tuned for more updates.
 - [2025/2/11] We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux.
 
-## Links
+## Dataset Links
 
 - **[SFT Data of ReasonFlux](https://huggingface.co/datasets/Gen-Verse/ReasonFlux_SFT_15k)**
 
