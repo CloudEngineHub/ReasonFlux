@@ -12,12 +12,13 @@
 | GaokaoEn 2023  |      **83.6**      |        -        |         71.4          |        78.4        |        65.3         |    -    |
 | AMC2023        |      **85.0**      |      80.0       |         90.0          |        95.0        |          -          |    -    |
 
+This repository provides official resources for the paper ["ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates"](https://arxiv.org/abs/2502.06772).
 
 <p align="center">
 <img src="./figs/image.png" width=80%>
 </p>
 
-This repository provides resources for the paper ["ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates"](https://arxiv.org/abs/2502.06772).
+
 
 - [Updates](#updates)
 - [Dataset Links](#dataset-links)
@@ -31,7 +32,7 @@ This repository provides resources for the paper ["ReasonFlux: Hierarchical LLM 
 
 ## Updates
 
-- [2025/2~2025/5] We currently utilize our ReasonFlux to enhance reasoning capabilities of DeepSeek-R1, stay tuned for more updates.
+- [2025/2~2025/5] We currently utilize our ReasonFlux to enhance reasoning capabilities of DeepSeek-R1 and generalize to more domains, stay tuned for more updates.
 - [2025/2/11] We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux.
 
 ## Dataset Links
