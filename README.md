@@ -56,8 +56,6 @@ This repository provides official resources for the paper ["ReasonFlux: Hierarch
 ## Getting Started
 
 ```bash
-git clone https://github.com/ReasonFlux
-cd ReasonFlux
 conda create -n ReasonFlux python==3.9
 conda activate ReasonFlux
 pip install -r requirements.txt
