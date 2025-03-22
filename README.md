@@ -53,7 +53,7 @@ This repository provides official resources for the paper ["ReasonFlux: Hierarch
 | :---------------: | :----------------------------------------------------------: |
 | ReasonFlux-F1-7B  |    [🤗 HuggingFace](https://huggingface.co/) (Coming soon)    |
 | ReasonFlux-F1-14B |    [🤗 HuggingFace](https://huggingface.co/) (Coming soon)    |
-| ReasonFlux-F1-32B | [🤗 HuggingFace](https://huggingface.co/https://huggingface.co/Gen-Verse/ReasonFlux-F1) |
+| ReasonFlux-F1-32B | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-F1) |
 
 ## Getting Started
 
@@ -68,8 +68,7 @@ pip install -r requirements.txt
 ## Training
 
 <details>
-  <summary>ReasonFlux-F1</summary>
-  <p><strong>Training ReasonFlux-F1</strong></p>
+  <summary>Training ReasonFlux-F1</summary>
   <p>To train ReasonFlux-F1, you should follow the steps below (also refer to <a href="./reasonflux-f1/README.md">./reasonflux-f1/README.md</a>):</p>
   <ol>
       <strong>Step 1:</strong> Add the data path to the <code>file_name</code> field of the ReasonFlux-F1 entry in 
@@ -113,8 +112,7 @@ pip install -r requirements.txt
 
 
 <details>
-  <summary>ReasonFlux-Zero</summary>
-  <p><strong>Training ReasonFlux-Zero</strong></p>
+  <summary>Training ReasonFlux-Zero</summary>
   <p>We utilize the open-source framework 
     <a href="https://github.com/hiyouga/LLaMA-Factory">LLaMA-Factory</a> for our training process.
   </p>
