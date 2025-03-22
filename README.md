@@ -232,7 +232,7 @@ You can test your trained model after the SFT stage to see if it could retrieve 
 
 ## Performance
 
-We present the evaluation results of our ReasonFlux-F1-32B on challenging reasoning tasks including AIME2024,AIM2025,MATH500 and GPQA-Diamond. To make a fair comparison, we report the results of the LLMs on our evaluation scripts in [ReasonFlux-F1]().
+We present the evaluation results of our ReasonFlux-F1-32B on challenging reasoning tasks including AIME2024,AIM2025,MATH500 and GPQA-Diamond. To make a fair comparison, we report the results of the LLMs on our evaluation scripts in [ReasonFlux-F1](./reasonflux-f1/).
 
 | Model                                   | AIME2024@pass1 | AIME2025@pass1 | MATH500@pass1 | GPQA@pass1 |
 | --------------------------------------- | :--------------: | :--------------: | :-------------: | :----------: |
