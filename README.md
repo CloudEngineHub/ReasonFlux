@@ -51,8 +51,6 @@ This repository provides official resources for the paper ["ReasonFlux: Hierarch
 
 |     **Model**     |                         **Download**                         |
 | :---------------: | :----------------------------------------------------------: |
-| ReasonFlux-F1-7B  |    [🤗 HuggingFace](https://huggingface.co/) (Coming soon)    |
-| ReasonFlux-F1-14B |    [🤗 HuggingFace](https://huggingface.co/) (Coming soon)    |
 | ReasonFlux-F1-32B | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-F1) |
 
 ## Getting Started
