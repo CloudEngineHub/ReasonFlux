@@ -101,8 +101,10 @@ pip install -r requirements.txt
 <details>
 <summary>Training ReasonFlux-F1</summary>
 
-1. Add data path to `file_name` field in [dataset_info.json](./LLaMA-Factory/data/dataset_info.json)
-2. Run training command:
+To train ReasonFlux-F1, follow these steps (also refer to [reasonflux-f1/README.md](./reasonflux-f1/README.md)):
+
+1. Add the data path to the `file_name` field of the ReasonFlux-F1 entry in [dataset_info.json](./LLaMA-Factory/data/dataset_info.json)
+2. Run the following command to train ReasonFlux-F1-32B:
 
 ```bash
 llamafactory-cli train \
@@ -142,8 +144,10 @@ llamafactory-cli train \
 <details>
 <summary>Training ReasonFlux-Zero</summary>
 
-1. Add data path to `file_name` field in [dataset_info.json](./LLaMA-Factory/data/dataset_info.json)
-2. Run training command:
+We utilize the open-source framework [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) for our training process.
+
+1. Add the data path to the `file_name` field of the ReasonFlux entry in [dataset_info.json](./LLaMA-Factory/data/dataset_info.json)
+2. Run the following command to train from a 32B model on 8 A100 GPUs:
 
 ```bash
 llamafactory-cli train \
@@ -181,11 +185,19 @@ llamafactory-cli train \
 
 ### 📊 Evaluation
 
+For evaluation, we reuse the evaluation framework in [s1](https://github.com/simplescaling/s1/). It is cloned [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) at commit `4cec66e4e468d15789473d6d63c3a61a751fa524` and has been modified to add some tasks.
+
+Setup:
 ```bash
 cd reasonflux-f1/eval/lm-evaluation-harness
 pip install -e .[math,vllm]
+```
 
-# Evaluate on multiple tasks
+All commands are in `eval/commands.sh`. For AIME24 we always pick the `aime24_nofigures` result, which uses a dataset that only contains the AIME24 figures if they are important for the task.
+
+For example, to evaluate ReasonFlux-F1-32B on AIME24/25, MATH500 and GPQA-Diamond:
+
+```bash
 OPENAI_API_KEY=your_key_here lm_eval \
     --model vllm \
     --model_args pretrained=Gen-verse/ReasonFlux-F1,dtype=float32,tensor_parallel_size=8,gpu_memory_utilization=0.95 \
@@ -200,6 +212,7 @@ OPENAI_API_KEY=your_key_here lm_eval \
 ### 💡 Inference
 
 #### ReasonFlux-F1
+
 ```python
 from vllm import LLM, SamplingParams
 from transformers import AutoTokenizer
@@ -208,14 +221,27 @@ model_id = 'Gen-Verse/ReasonFlux-F1'
 model = LLM(model_id, tensor_parallel_size=8)
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 
+# Example: 2022 AIME I Problems/Problem 15
+question = """Let \(x, y\), and \(z\) be positive real numbers satisfying the system of equations:
+\[
+\begin{array}{c}
+\sqrt{2 x-x y}+\sqrt{2 y-x y}=1 \\
+\sqrt{2 y-y z}+\sqrt{2 z-y z}=\sqrt{2} \\
+\sqrt{2 z-z x}+\sqrt{2 x-z x}=\sqrt{3} .
+\end{array}
+\]
+Then \(\left[(1-x)(1-y)(1-z)\right]^{2}\) can be written as \(\frac{m}{n}\), where \(m\) and \(n\) are relatively prime positive integers. Find \(m+n\)."""
+
 sampling_params = SamplingParams(max_tokens=32768)
-question = """Your question here"""
 ds_prompt = "REDACTED_SPECIAL_TOKEN\n" + question + "REDACTED_SPECIAL_TOKEN\n"
 output = model.generate(ds_prompt, sampling_params=sampling_params)
 print(output[0].outputs[0].text)
 ```
 
 #### ReasonFlux-Zero
+
+When you complete your first-stage training, you can use simple lines of code to conduct reasoning:
+
 ```python
 from reasonflux import ReasonFlux
 
@@ -226,8 +252,17 @@ reasonflux = ReasonFlux(
     template_path='template_library.json'
 )
 
-problem = """Your problem here"""
+# Example problem
+problem = """Given a sequence {aₙ} satisfying a₁=3, and aₙ₊₁=2aₙ+5 (n≥1), find the general term formula aₙ"""
 ```
+
+Parameter descriptions:
+- `navigator_path`: Path to your trained LLM after SFT-stage
+- `template_matcher_path`: Path to the embedding model (can use local model or download [jina-embedding-v3](https://huggingface.co/jinaai/jina-embeddings-v3))
+- `inference_path`: Path to the reasoning model (recommended to use the same LLM as navigator to save memory)
+- `template_path`: Path to the template library (first run will encode the library for efficient querying)
+
+> 🚨 Note: If using jina-embedding-v3, ensure flash-attn is not installed in your environment to avoid conflicts during encoding.
 
 ---
 
