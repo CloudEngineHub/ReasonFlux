@@ -80,7 +80,7 @@ pip install -r requirements.txt
       --model_name_or_path deepseek-ai/DeepSeek-R1-Distill-Qwen-32B \
       --preprocessing_num_workers 16 \
       --finetuning_type full \
-      --template qwen \
+      --template deepseekr1 \
       --flash_attn auto \
       --dataset_dir data \
       --dataset ReasonFlux-F1 \
