@@ -17,7 +17,7 @@
 - [ReasonFlux-v2](./ReasonFlux_v2/README.md)
 - [ReasonFlux-F1](./ReasonFlux_F1/README.md)
 - [ReasonFlux-v1](./ReasonFlux_v1/README.md)
-- [**Performance**](## Performance)
+- [Performance](#performance)
 - [Citation](#citation)
 
 ## Updates
