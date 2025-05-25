@@ -26,7 +26,7 @@ ReasonFlux-v2 consists of two main modules:
 2. **Template Reasoner**, which follow the proposed high-level thought template to efficiently and effectively solve the corresponding problem.
 
 <p align="center">
-<img src="../figs/reasonflux_V2.png" width=80%>
+<img src="../figs/reasonflux_v2.png" width=80%>
 </p>
 
 ## ✅ TODO
