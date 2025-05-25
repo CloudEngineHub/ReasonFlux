@@ -42,9 +42,9 @@ ReasonFlux-v2 consists of two main modules:
 
 |               **Dataset**               |                         **Download**                         |
 | :-------------------------------------: | :----------------------------------------------------------: |
-|       Extracted Thought Template        | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-Template) |
-|               SFT Dataset               | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-SFT) |
-| Template Proposer DPO Dataset (Round 1) | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-DPO) |
+|       Extracted Thought Template        | [🤗 HuggingFace](https://huggingface.co/datasets/Gen-Verse/ReasonFlux-V2-Template) |
+|               SFT Dataset               | [🤗 HuggingFace](https://huggingface.co/datasets/Gen-Verse/ReasonFlux-V2-SFT) |
+| Template Proposer DPO Dataset (Round 1) | [🤗 HuggingFace](https://huggingface.co/datasets/Gen-Verse/ReasonFlux-V2-DPO) |
 | Template Reasoner DPO Dataset (Round 1) |                   Will soon be available !                   |
 
 ## ⚙️ Quick Start
