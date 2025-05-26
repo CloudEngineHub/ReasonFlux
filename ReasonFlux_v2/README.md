@@ -154,7 +154,7 @@ For DPO of **template reasoner**, run the code below:
 llamafactory-cli train \
     --stage dpo \
     --do_train True \
-    --model_name_or_path /data_storage/yzc/models/Qwen/Qwen3-32B \
+    --model_name_or_path Qwen/Qwen3-32B \
     --preprocessing_num_workers 16 \
     --finetuning_type full \
     --template qwen3 \
