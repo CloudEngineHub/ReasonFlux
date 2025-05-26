@@ -163,7 +163,7 @@ llamafactory-cli train \
     --dataset dpo_reasoner \
     --cutoff_len 16384 \
     --learning_rate 5e-07 \
-    --num_train_epochs 1.0 \
+    --num_train_epochs 4.0 \
     --max_samples 100000 \
     --per_device_train_batch_size 4 \
     --gradient_accumulation_steps 8 \
