@@ -23,7 +23,7 @@
 ## Updates
 
 - [2025/5/26] 🎉 We open-source the model weights, training & evaluation scripts for [ReasonFlux-v2](./ReasonFlux_v2/README.md). **We will release our ReasonFlux-V2 paper soon.**
-- [2025/5/26] 🎉We release **ReasonFlux-v2**, an effective template-augmented reasoning paradigm that internalizes thought template through iterative hierarchical reinforcement learning. It has achieved SOTA-Level performance with less token consumption.
+- [2025/5/26] 🎉We release [**ReasonFlux-v2**](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B), an effective template-augmented reasoning paradigm that internalizes thought template through iterative hierarchical reinforcement learning. It has achieved SOTA-Level performance with less token consumption.
 - [2025/3/24] 🎉We release [ReasonFlux-F1-32B](https://huggingface.co/Gen-Verse/ReasonFlux-F1), [ReasonFlux-F1-14B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-14B), [ReasonFlux-F1-7B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-7B), a series of SOTA-level reasoning LLMs by leveraging the template-augmented reasoning trajectories collected from our ReasonFlux-Zero. For the training and evaluation scripts, please refer to [reasonflux-f1/README.md](./reasonflux-f1/README.md) for detail.
 - [2025/2/11] 🎉We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux-v1.
 - [2025/2/11]🎉We propose [ReasonFlux-v1](), a hierarchical LLM reasoning framework that significantly enhances complex reasoning capabilities, outperforming SOTA models like o1-preview and DeepSeek-V3 on challenging MATH and AIME benchmarks.
