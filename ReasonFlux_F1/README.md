@@ -148,3 +148,13 @@ We present the evaluation results of our ReasonFlux-F1-32B on challenging reason
 | ReasonFlux-v1-32B     |      56.7      |      37.2      |     91.2      |    61.2    |
 | **ReasonFlux-F1-32B** |    **76.7**    |    **53.3**    |   **96.0**    |  **67.2**  |
 
+## Citation
+
+```bash
+@article{yang2025reasonflux,
+  title={ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates},
+  author={Yang, Ling and Yu, Zhaochen and Cui, Bin and Wang, Mengdi},
+  journal={arXiv preprint arXiv:2502.06772},
+  year={2025}
+}
+```

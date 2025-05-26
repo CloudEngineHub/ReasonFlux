@@ -1,19 +1,20 @@
 <div align="center">
-  <h1>ReasonFlux-V2:Internalizing Template-Augmented LLM Reasoning
+  <h1>ReasonFlux-V2: Internalizing Template-Augmented LLM Reasoning
 with Hierarchical Reinforcement Learning</h1>
 </div>
 
 <p align="center">
-<img src="../figs/comparison.png" width=80%>
+<img src="../figs/comparison.png" width=100%>
 </p>
 
 # Introduction
 
-**ReasonFlux-V2** is our new template-augmented reasoning paradigm which **internalize the thought templates** through **iterative hierarchical reinforcement learning**.  Specifically, we first develop an automated pipeline to extract thought templates from the problem–solution pairs in training set. To effectively internalize these high-level thought templates and learning a more efficient reasoning paradigm,  we propose two collaborative modules: **Template Proposer**  which adaptively proposes suitable thought templates based on the input problem; and **Template Reasoner **,which exactly instantiates the proposed templates and performs precise, detailed reasoning. Building upon these modules, we iteratively conduct **hierarchical RL** on optimizing both modules. 
+**ReasonFlux-V2** is our new template-augmented reasoning paradigm which **internalize the thought templates** through **iterative hierarchical reinforcement learning**.  Specifically, we first develop an automated pipeline to extract thought templates from the problem–solution pairs in training set. To effectively internalize these high-level thought templates and learning a more efficient reasoning paradigm,  we propose two collaborative modules: **Template Proposer**  which adaptively proposes suitable thought templates based on the input problem; and **Template Reasoner**,which exactly instantiates the proposed templates and performs precise, detailed reasoning. Building upon these modules, we iteratively conduct **hierarchical RL** on optimizing both modules. 
 
 <p align="center">
 <img src="../figs/ReasonFluxv2_method.png" width=80%>
 </p>
+
 **ReasonFlux-v2** offers a more efficient, generalizable solution for enhancing the complex reasoning capabilities of LLMs. Compare with conventional reasoning LLMs, our **ReasonFlux-V2** could correctly and efficiently solve the problems with less token consumption and inference time. 
 
  **We will release our paper related with ReasonFlux-V2 soon.**
@@ -29,10 +30,8 @@ ReasonFlux-v2 consists of two main modules:
 <img src="../figs/reasonflux_v2.png" width=80%>
 </p>
 
-## ✅ TODO
-- [ ] Release  the code for data construction process for each stage.
-- [ ] Release the data for each stage and release the model checkpoint for iterative round 3.
-- [ ] Release the code for evaluation on GPQA-Diamond
+
+
 
 ### 🤗 Model Pool & Dataset
 
@@ -46,6 +45,9 @@ ReasonFlux-v2 consists of two main modules:
 |               SFT Dataset               | [🤗 HuggingFace](https://huggingface.co/datasets/Gen-Verse/ReasonFlux-V2-SFT) |
 | Template Proposer DPO Dataset (Round 1) | [🤗 HuggingFace](https://huggingface.co/datasets/Gen-Verse/ReasonFlux-V2-DPO) |
 | Template Reasoner DPO Dataset (Round 1) |                   Will soon be available !                   |
+
+## ✅ TODO
+- [ ] Release training data construction pipeline.
 
 ## ⚙️ Quick Start
 First, set up the enviroment:
@@ -241,7 +243,7 @@ Her we compare our ReasonFlux series models with **Frontier LLMs** and other **O
 ## 📖 Citation
 
 ```bash
-@article{yang2025reasonflux_v1,
+@article{yang2025reasonflux,
   title={ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates},
   author={Yang, Ling and Yu, Zhaochen and Cui, Bin and Wang, Mengdi},
   journal={arXiv preprint arXiv:2502.06772},
