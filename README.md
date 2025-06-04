@@ -14,6 +14,7 @@
 ## Table of Contents
 
 - [Updates](#updates)
+- [ReasonFlux-Coder](https://github.com/Gen-Verse/CURE)
 - [ReasonFlux-v2](./ReasonFlux_v2/README.md)
 - [ReasonFlux-F1](./ReasonFlux_F1/README.md)
 - [ReasonFlux-v1](./ReasonFlux_v1/README.md)
@@ -22,6 +23,7 @@
 
 ## Updates
 
+- [2025/6/04] 🎉 We release our [co-evolving RL](https://arxiv.org/abs/2506.03136) optimized coding LLMs, [ReasonFlux-Coder-7B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-7B) and [ReasonFlux-Coder-14B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-14B), which outperform similarly sized Qwen Coders and DeepSeek Coders, and naturally fit into [common test-time scaling and agentic coding pipelines](https://github.com/Gen-Verse/CURE). We also release our Long-CoT model [ReasonFlux-Coder-4B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-4B), outperforming Qwen3-4B while achieving 64.8% efficiency in unit test generation.
 - [2025/5/26] 🎉 We open-source the model weights, training & evaluation scripts for [ReasonFlux-v2](./ReasonFlux_v2/README.md). **We will release our ReasonFlux-V2 paper soon.**
 - [2025/5/26] 🎉We release [**ReasonFlux-v2**](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B), an effective template-augmented reasoning paradigm that internalizes thought template through iterative hierarchical reinforcement learning. It has achieved SOTA-Level performance with less token consumption.
 - [2025/3/24] 🎉We release [ReasonFlux-F1-32B](https://huggingface.co/Gen-Verse/ReasonFlux-F1), [ReasonFlux-F1-14B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-14B), [ReasonFlux-F1-7B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-7B), a series of SOTA-level reasoning LLMs by leveraging the template-augmented reasoning trajectories collected from our ReasonFlux-Zero. For the training and evaluation scripts, please refer to [reasonflux-f1/README.md](./reasonflux-f1/README.md) for detail.
