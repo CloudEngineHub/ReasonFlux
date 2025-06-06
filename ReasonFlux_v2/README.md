@@ -187,23 +187,33 @@ llamafactory-cli train \
     --deepspeed cache/ds_z3_offload_config.json
 ```
 
-## Evaluation
+## Inference & Evaluation
 
-The running of the evaluation scripts requires two distinct models, so first we utilize sglang to to create an OpenAI-compatible API endpoint for more efficient sampling.
+The running of the evaluation and inference scripts requires two distinct models, so first we utilize sglang to to create an endpoint for more efficient sampling.
 
 To deploy Template Proposer, run:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 python -m sglang.launch_server --model-path GenVerse/ReasonFlux-V2-Proposer-32B --reasoning-parser qwen3 --port 30000 --tp-size 4
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m sglang.launch_server --model-path Gen-Verse/ReasonFlux-V2-32B/Template-Proposer --reasoning-parser qwen3 --port 30000 --tp-size 4
 ```
 
 To deploy Template Reasoner, run:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 python -m sglang.launch_server --model-path GenVerse/ReasonFlux-V2-Proposer-32B --reasoning-parser qwen3 --port 30001 --tp-size 4
+CUDA_VISIBLE_DEVICES=4,5,6,7 python -m sglang.launch_server --model-path Gen-Verse/ReasonFlux-V2-32B/Template-Reasoner --reasoning-parser qwen3 --port 30001 --tp-size 4
 ```
 
- Then run the code below to continue the evaluation on the benchmark:
+###  Inference
+
+To run the inference code, we provide simple scripts in [inference.py](inference.py), you can modify the problem to test our reasoning framework. For test purpose, you can run inference scripts with our given samples:
+
+```bash
+python inference.py
+```
+
+### Evaluation
+
+Then run the code below to continue the evaluation on the benchmark:
 
 ```bash
 python extract_solve_eval.py -b AIME24,AIME25,MATH500 -tm Template-Proposer-32B -rm Template-Reasoner-32B 
