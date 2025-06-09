@@ -35,9 +35,10 @@ ReasonFlux-v2 consists of two main modules:
 
 ### 🤗 Model Pool & Dataset
 
-|          **Model**           |                         **Download**                         |
-| :--------------------------: | :----------------------------------------------------------: |
-| ReasonFlux-V2-32B（Round 1） | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B) |
+|               **Model**               |                         **Download**                         |
+| :-----------------------------------: | :----------------------------------------------------------: |
+| ReasonFlux-V2-32B-Proposer（Round 1） | 🤗 [HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer) |
+| ReasonFlux-V2-32B-Reasoner（Round 1） | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner) |
 
 |               **Dataset**               |                         **Download**                         |
 | :-------------------------------------: | :----------------------------------------------------------: |
@@ -194,13 +195,13 @@ The running of the evaluation and inference scripts requires two distinct models
 To deploy Template Proposer, run:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 python -m sglang.launch_server --model-path Gen-Verse/ReasonFlux-V2-32B/Template-Proposer --reasoning-parser qwen3 --port 30000 --tp-size 4
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m sglang.launch_server --model-path Gen-Verse/ReasonFlux-V2-32B-Proposer --reasoning-parser qwen3 --port 30000 --tp-size 4
 ```
 
 To deploy Template Reasoner, run:
 
 ```bash
-CUDA_VISIBLE_DEVICES=4,5,6,7 python -m sglang.launch_server --model-path Gen-Verse/ReasonFlux-V2-32B/Template-Reasoner --reasoning-parser qwen3 --port 30001 --tp-size 4
+CUDA_VISIBLE_DEVICES=4,5,6,7 python -m sglang.launch_server --model-path Gen-Verse/ReasonFlux-V2-32B-Reasoner --reasoning-parser qwen3 --port 30001 --tp-size 4
 ```
 
 ###  Inference
@@ -216,7 +217,7 @@ python inference.py
 Then run the code below to continue the evaluation on the benchmark:
 
 ```bash
-python extract_solve_eval.py -b AIME24,AIME25,MATH500 -tm Template-Proposer-32B -rm Template-Reasoner-32B 
+python extract_solve_eval.py -b AIME24,AIME25,MATH500 -tm Gen-Verse/ReasonFlux-V2-32B-Proposer -rm Gen-Verse/ReasonFlux-V2-32B-Reasoner
 ```
 
 ## Performance
