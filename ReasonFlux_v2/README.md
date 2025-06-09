@@ -37,7 +37,7 @@ ReasonFlux-v2 consists of two main modules:
 
 |               **Model**               |                         **Download**                         |
 | :-----------------------------------: | :----------------------------------------------------------: |
-| ReasonFlux-V2-32B-Proposer（Round 1） | 🤗 [HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer) |
+| ReasonFlux-V2-32B-Proposer（Round 1） | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer) |
 | ReasonFlux-V2-32B-Reasoner（Round 1） | [🤗 HuggingFace](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner) |
 
 |               **Dataset**               |                         **Download**                         |
