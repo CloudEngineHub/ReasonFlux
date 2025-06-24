@@ -1,6 +1,6 @@
 <div align="center">
 
-# Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning
+# ReasonFlux-PRM: Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning in LLMs
 
 </div>
 
