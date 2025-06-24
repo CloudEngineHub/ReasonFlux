@@ -1,38 +1,161 @@
-<div align="center">
-  <h1>ReasonFlux Series</h1>
-  <p>Revolutionary thought template-augmented LLM reasoning paradigm (ReasonFlux-V1/F1/V2) enpowers a 32B model to achieve SOTA-Level performance in complex reasoning tasks.
- </p>
-</div>
+# 🧠 ReasonFlux Series
+### *Advanced Open-Source LLM Post-Training Suite*
+**Princeton University** \& **PKU** \& **UIUC** \& **University of Chicago** \& **ByteDance TopSeed**
 
+**🎯 Mission**: Building next-generation reasoning capabilities through innovative LLM post-training algorithms focusing on **data selection**, **reinforcement learning**, and **inference scaling**.
 
+## Contents of Repository
+
+- [Updates](#updates)
+- [Model Family Guide](#model-family-guide)
+  - [ReasonFlux-PRM](./ReasonFlux_PRM/README.md)
+  - [ReasonFlux-Coder](https://github.com/Gen-Verse/CURE)
+  - [ReasonFlux-v2](./ReasonFlux_v2/README.md)
+  - [ReasonFlux-F1](./ReasonFlux_F1/README.md)
+  - [ReasonFlux-v1](./ReasonFlux_v1/README.md)
+- [Performance Hightlights](#performance-highlights)
+- [Citation](#citation)
+
+## 🚀 What Makes ReasonFlux Series Special?
+
+### 1. Long CoT Reasoning with Thought Templates (ReasonFlux V1/F1/V2)
+Revolutionary hierarchical reasoning framework that uses thought templates to guide complex problem-solving, achieving SOTA performance with higher efficiency.
 <p align="center">
 <img src="./figs/comparison.png" width=100%>
 </p>
 
+### 2. Trajectory-Aware Process Reward Models (ReasonFlux-PRM)
+Trajectory-aware reward models that provide dense supervision for both offline data selection and online policy optimization.
+<p align="center">
+<img src="./ReasonFlux_PRM/img/intro_res.png" width=100%>
+</p>
+
+### 3. Co-Evolved RL for LLM Coder and Unit Tester (ReasonFlux-Coder)
+Innovative approach where coders and unit testers evolve together through reinforcement learning, creating more robust coding capabilities.
+<p align="center">
+<img src="./ReasonFlux_Coder/figures/overviewplot.png" width=100%>
+</p>
 
 
-## Table of Contents
 
-- [Updates](#updates)
-- [ReasonFlux-Coder](https://github.com/Gen-Verse/CURE)
-- [ReasonFlux-v2](./ReasonFlux_v2/README.md)
-- [ReasonFlux-F1](./ReasonFlux_F1/README.md)
-- [ReasonFlux-v1](./ReasonFlux_v1/README.md)
-- [Performance](#performance)
-- [Citation](#citation)
 
 ## Updates
 
-- [2025/6/04] 🎉 We release our [co-evolving RL](https://arxiv.org/abs/2506.03136) optimized coding LLMs, [ReasonFlux-Coder-7B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-7B) and [ReasonFlux-Coder-14B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-14B), which outperform similarly sized Qwen Coders and DeepSeek Coders, and naturally fit into [common test-time scaling and agentic coding pipelines](https://github.com/Gen-Verse/CURE). We also release our Long-CoT model [ReasonFlux-Coder-4B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-4B), outperforming Qwen3-4B while achieving 64.8% efficiency in unit test generation.
+- [2025/6/23] 🎉 We introduce [**ReasonFlux-PRM**](https://arxiv.org/abs/2506.18896), a family of trajectory-aware process reward models (PRMs) for long CoT reasoning in LLMs. ReasonFlux-PRM is able to support **both offline and online reward supervision**, by selecting high-quality training data for model distillation, providing dense process-level rewards for policy optimization during reinforcement learning, and enabling reward-guided test-time scaling. 
+Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-7B) and [ReasonFlux-PRM-1.5B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-1.5B) are now available on [HuggingFace-GenX](https://huggingface.co/Gen-Verse). We also release a 7B advanced thinking and reasoning model [ReasonFlux-PRM-Qwen-2.5-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-Qwen-2.5-7B) supervised via our PRM.
+
+- [2025/6/04] 🎉 We release our [**Co-Evolving RL**](https://github.com/Gen-Verse/CURE) optimized coding LLMs, [ReasonFlux-Coder-7B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-7B) and [ReasonFlux-Coder-14B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-14B), which outperform similarly sized Qwen Coders and DeepSeek Coders, and naturally fit into common test-time scaling and agentic coding pipelines. We also release our Long-CoT model [ReasonFlux-Coder-4B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-4B), outperforming Qwen3-4B while achieving 64.8% efficiency in unit test generation.
 - [2025/5/26] 🎉 We open-source the model weights, training & evaluation scripts for [ReasonFlux-V2](./ReasonFlux_v2/README.md). **We will release our ReasonFlux-V2 paper soon.**
-- [2025/5/26] 🎉We release **ReasonFlux-V2-32B**, an effective template-augmented reasoning paradigm including [**Template Proposer**](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer) and [**Template Reasoner**](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner),  which internalizes thought template through iterative hierarchical reinforcement learning. It has achieved SOTA-Level performance with less token consumption.
+- [2025/5/26] 🎉We release **ReasonFlux-V2-32B**, an effective template-augmented reasoning paradigm including [Template Proposer](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer) and [Template Reasoner](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner),  which internalizes thought template through iterative hierarchical reinforcement learning. It has achieved SOTA-Level performance with less token consumption.
 - [2025/3/24] 🎉We release [ReasonFlux-F1-32B](https://huggingface.co/Gen-Verse/ReasonFlux-F1), [ReasonFlux-F1-14B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-14B), [ReasonFlux-F1-7B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-7B), a series of SOTA-level reasoning LLMs by leveraging the template-augmented reasoning trajectories collected from our ReasonFlux-Zero. For the training and evaluation scripts, please refer to [reasonflux-f1/README.md](./reasonflux-f1/README.md) for detail.
 - [2025/2/11] 🎉We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux-v1.
-- [2025/2/11]🎉We propose [ReasonFlux-v1](), a hierarchical LLM reasoning framework that significantly enhances complex reasoning capabilities, outperforming SOTA models like o1-preview and DeepSeek-V3 on challenging MATH and AIME benchmarks.
+- [2025/2/11]🎉We propose [ReasonFlux-v1](https://arxiv.org/abs/2502.06772), a hierarchical LLM reasoning framework that significantly enhances complex reasoning capabilities, outperforming SOTA models like o1-preview and DeepSeek-V3 on challenging MATH and AIME benchmarks.
 
-## Performance
+## Model Family Guide
 
-Her we compare our ReasonFlux series models with **Frontier LLMs** and other **Open-Sourced Reasoning LLMs** on challenging benchmarks like MATH-500,AIME2024,AIME-2025 and GPQA-Diamond. We can see that our method has achieved state-of-the-art performance on all evaluated tasks.
+### 🧠 **Reasoning Models**
+
+<table>
+<tr>
+<th>Model</th>
+<th>Size</th>
+<th>Key Features</th>
+<th>Best For</th>
+<th>Download</th>
+</tr>
+<tr>
+<td><strong>ReasonFlux-V2</strong></td>
+<td>32B</td>
+<td>• Template Proposer + Reasoner<br/>• Iterative Hierarchical RL<br/>• SOTA Performance</td>
+<td>Complex mathematical reasoning</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer">🤗 Proposer</a><br/><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner">🤗 Reasoner</a></td>
+</tr>
+<tr>
+<td><strong>ReasonFlux-F1</strong></td>
+<td>7B/14B/32B</td>
+<td>• Template-augmented trajectories<br/>• Efficient training<br/>• Multiple sizes</td>
+<td>General reasoning tasks</td>
+<td><a href="https://huggingface.co/collections/Gen-Verse/reasonflux-series-67e8ebd46c7216f5bf8c2421">🤗 Models</a></td>
+</tr>
+<tr>
+<td><strong>ReasonFlux-V1</strong></td>
+<td>32B</td>
+<td>• Hierarchical reasoning<br/>• Template library<br/>• Foundation model</td>
+<td>Research & development</td>
+<td><a href="#">🤗 Model</a></td>
+</tr>
+</table>
+
+### 🎯 **Process Reward Models**
+
+<table>
+<tr>
+<th>Model</th>
+<th>Size</th>
+<th>Capabilities</th>
+<th>Use Cases</th>
+<th>Download</th>
+</tr>
+<tr>
+<td><strong>ReasonFlux-PRM</strong></td>
+<td>7B</td>
+<td>• Trajectory-aware scoring<br/>• Online/Offline supervision<br/>• Dense process rewards</td>
+<td>Data selection, RL training, Test-time scaling</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-PRM-7B">🤗 7B</a></td>
+</tr>
+<tr>
+<td><strong>ReasonFlux-PRM</strong></td>
+<td>1.5B</td>
+<td>• Lightweight scoring<br/>• Efficient inference<br/>• Edge deployment</td>
+<td>Resource-constrained applications</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-PRM-1.5B">🤗 1.5B</a></td>
+</tr>
+</tr>
+<tr>
+<td><strong>ReasonFlux-PRM-Qwen-2.5</strong></td>
+<td>7B</td>
+<td>• Long CoT reasoning <br/>• Solving complex tasks and problems</td>
+<td>Math and Science Reasoning</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-PRM-Qwen-2.5-7B">🤗 7B</a></td>
+</tr>
+</table>
+
+### 💻 **Coding Models**
+
+<table>
+<tr>
+<th>Model</th>
+<th>Size</th>
+<th>Specialization</th>
+<th>Performance</th>
+<th>Download</th>
+</tr>
+<tr>
+<td><strong>ReasonFlux-Coder</strong></td>
+<td>14B</td>
+<td>• Co-evolutionary RL<br/>• Advanced coding<br/>• Unit test generation</td>
+<td>Outperforms Qwen & DeepSeek Coders</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-Coder-14B">🤗 14B</a></td>
+</tr>
+<tr>
+<td><strong>ReasonFlux-Coder</strong></td>
+<td>7B</td>
+<td>• Balanced performance<br/>• Efficient inference<br/>• Production ready</td>
+<td>Excellent coding capabilities</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-Coder-7B">🤗 7B</a></td>
+</tr>
+<tr>
+<td><strong>ReasonFlux-Coder</strong></td>
+<td>4B</td>
+<td>• Long-CoT reasoning<br/>• Compact size<br/>• Unit test focused</td>
+<td>64.8% efficiency in unit test generation</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-Coder-4B">🤗 4B</a></td>
+</tr>
+</table>
+
+## Performance Highlights
+
+### 1. Complex Reasoning
 
 | Model                           | MATH-500 | AIME 2024 | AIME 2025 | GQPA-Diamond |
 | ------------------------------- | -------- | --------- | --------- | ------------ |
@@ -61,6 +184,25 @@ Her we compare our ReasonFlux series models with **Frontier LLMs** and other **O
 | **ReasonFlux-F1 (2025-3）**     | 96.0 | 76.7  | 53.3  | 67.2     |
 | **ReasonFlux-V2 (2025-5)**      | **97.8** | **86.7**  | 76.7  | **71.2**     |
 
+
+### 2. Code Generation and Reasoning
+<p align="center">
+  <img src="ReasonFlux_Coder/figures/results.png"   alt="Results of ReasonFlux-Coder"  width="700">
+</p>
+
+### 3. PRMs for Long-CoT Reasoning
+We observe that in the downstream offline data selection + SFT setting, ReasonFlux-PRM-7B surpasses the performance of the high-quality, human-curated s1k dataset. We further visualize the score distributions over 1,000 trajectory-response pairs generated by Deepseek-R1 and Gemini. The clearly separated distributions indicate that ReasonFlux-PRM-7B effectively differentiates the quality of responses from different models, offering a robust and reliable reward signal for high-quality data selection.
+
+<img src="./ReasonFlux_PRM/img/sft.png" alt="" style="width: 100%; max-width: 1000px; margin-bottom: 20px;" id="sft">
+
+Under the online settings, ReasonFlux-PRM-7B also surpasses other PRM and rule-based baselines during the GRPO policy optimization. 
+
+<img src="./ReasonFlux_PRM/img/rl.png" alt="" style="width: 100%; max-width: 1000px; margin-bottom: 20px;" id="rl">
+
+
+
+<img src="./ReasonFlux_PRM/img/efficiency.png" alt="" style="width: 100%; max-width: 1000px; margin-bottom: 10px;" id="efficiency">
+
 ## Citation
 
 ```bash
@@ -68,6 +210,20 @@ Her we compare our ReasonFlux series models with **Frontier LLMs** and other **O
   title={ReasonFlux: Hierarchical LLM Reasoning via Scaling Thought Templates},
   author={Yang, Ling and Yu, Zhaochen and Cui, Bin and Wang, Mengdi},
   journal={arXiv preprint arXiv:2502.06772},
+  year={2025}
+}
+
+@article{wang2025cure,
+  title={Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning},
+  author={Wang, Yinjie and Yang, Ling and Tian, Ye and Shen, Ke and Wang, Mengdi},
+  journal={arXiv preprint arXiv:2506.03136},
+  year={2025}
+}
+
+@article{zou2025reasonfluxprm,
+  title={ReasonFlux-PRM: Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning in LLMs},
+  author={Zou, Jiaru and Yang, Ling and Gu, Jingwen and Qiu, Jiahao and Shen, Ke and He, Jingrui and Wang, Mengdi},
+  journal={arXiv preprint arXiv:2506.18896},
   year={2025}
 }
 ```
