@@ -213,7 +213,7 @@ Under the online settings, ReasonFlux-PRM-7B also surpasses other PRM and rule-b
   year={2025}
 }
 
-@article{wang2025cure,
+@article{wang2025reasonfluxcoder,
   title={Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning},
   author={Wang, Yinjie and Yang, Ling and Tian, Ye and Shen, Ke and Wang, Mengdi},
   journal={arXiv preprint arXiv:2506.03136},
