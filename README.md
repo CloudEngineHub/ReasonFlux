@@ -100,14 +100,14 @@ Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/
 <td><strong>ReasonFlux-PRM</strong></td>
 <td>7B</td>
 <td>• Trajectory-aware scoring<br/>• Online/Offline supervision<br/>• Dense process rewards</td>
-<td>Data selection, RL training, Test-time scaling</td>
+<td>PRM: Data selection, RL training, Test-time scaling</td>
 <td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-PRM-7B">🤗 7B</a></td>
 </tr>
 <tr>
 <td><strong>ReasonFlux-PRM</strong></td>
 <td>1.5B</td>
 <td>• Lightweight scoring<br/>• Efficient inference<br/>• Edge deployment</td>
-<td>Resource-constrained applications</td>
+<td>PRM: Resource-constrained applications</td>
 <td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-PRM-1.5B">🤗 1.5B</a></td>
 </tr>
 </tr>
@@ -115,7 +115,7 @@ Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/
 <td><strong>ReasonFlux-PRM-Qwen-2.5</strong></td>
 <td>7B</td>
 <td>• Long CoT reasoning <br/>• Solving complex tasks and problems</td>
-<td>Math and Science Reasoning</td>
+<td>Tuned Reasoning Model: Math and Science Reasoning</td>
 <td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-PRM-Qwen-2.5-7B">🤗 7B</a></td>
 </tr>
 </table>
