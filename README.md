@@ -13,6 +13,7 @@
   - [ReasonFlux-v2](./ReasonFlux_v2/README.md)
   - [ReasonFlux-F1](./ReasonFlux_F1/README.md)
   - [ReasonFlux-v1](./ReasonFlux_v1/README.md)
+  - [Preliminary Work on Thought Template](#preliminary-work-on-thought-template)
 - [Performance Hightlights](#performance-highlights)
 - [Citation](#citation)
 
@@ -36,7 +37,8 @@ Innovative approach where coders and unit testers evolve together through reinfo
 <img src="./ReasonFlux_Coder/figures/overviewplot.png" width=100%>
 </p>
 
-
+## Preliminary Work on Thought Template
+Our ReasonFlux-V1/F1/V2 models are built upon insights from our preliminary work on thought templates—specifically, [Buffer of Thoughts](https://arxiv.org/abs/2406.04271) and [SuperCorrect](https://arxiv.org/abs/2410.09008). These works introduce high-level, efficient intermediate reasoning patterns that guide and structure the thinking process of large language models.
 
 
 ## Updates
