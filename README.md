@@ -43,6 +43,8 @@ Our ReasonFlux-V1/F1/V2 models are built upon insights from our preliminary work
 
 ## Updates
 
+- [2025/7/4] 🎉 We release the [DPO dataset](https://huggingface.co/datasets/Gen-Verse/ReasonFlux-V2-Reasoner-DPO) for Template Reasoner of [ReasonFlux-V2](./ReasonFlux_v2/README.md).
+
 - [2025/6/23] 🎉 We introduce [**ReasonFlux-PRM**](https://arxiv.org/abs/2506.18896), a family of trajectory-aware process reward models (PRMs) for long CoT reasoning in LLMs. ReasonFlux-PRM is able to support **both offline and online reward supervision**, by selecting high-quality training data for model distillation, providing dense process-level rewards for policy optimization during reinforcement learning, and enabling reward-guided test-time scaling. 
 Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-7B) and [ReasonFlux-PRM-1.5B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-1.5B) are now available on [HuggingFace-GenX](https://huggingface.co/Gen-Verse). We also release a 7B advanced thinking and reasoning model [ReasonFlux-PRM-Qwen-2.5-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-Qwen-2.5-7B) supervised via our PRM.
 
