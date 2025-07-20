@@ -62,6 +62,12 @@ pip install -r requirements.txt
 ## ⚙️ Model Usage
 We show how to utilize ReasonFlux-PRM-1.5B, ReasonFlux-PRM-7B for scoring and ReasonFlux-PRM-Qwen-2.5-7B for inference. 
 
+- Prepare the question and corresponding answer.
+- Split the answer into different reasoning steps.
+- Follow the example below to call ReasonFlux-PRM and receive the process rewards.
+
+*Note: Below, we also provide an example usage for a downstream reasoning model trained via ReasonFlux-PRM.*
+
 **ReasonFlux-PRM-7B**
 ```python 
 import torch
@@ -69,10 +75,14 @@ import torch.nn.functional as F
 from transformers import AutoModel, AutoTokenizer
 from utils.rm_utils import make_step_rewards
 
+# Load ReasonFlux PRM model and tokenizer
 model = AutoModel.from_pretrained("Gen-Verse/ReasonFlux-PRM-7B", device_map="auto", torch_dtype=torch.bfloat16, trust_remote_code=True).eval()
 
 tokenizer = AutoTokenizer.from_pretrained("Gen-Verse/ReasonFlux-PRM-7B", trust_remote_code=True)
 
+
+# Define your question (problem) and reasoning steps (completion)
+# Note: You can split the entire answer with `\n\n` to obtain each step
 problem = "..."
 completion = [
   "...",
@@ -81,7 +91,7 @@ completion = [
 
 messages = [
   {"role": "user", "content": problem},
-  {"role": "assistant", "content": "<extra_0>".join(completion) + "<extra_0>"},
+  {"role": "assistant", "content": "<extra_0>".join(completion) + "<extra_0>"}, # Join reasoning steps with <extra_0> separator
 ]
 
 conversation_str = tokenizer.apply_chat_template(
@@ -100,6 +110,8 @@ with torch.inference_mode():
 
 step_sep_id = tokenizer.encode("<extra_0>")[0]
 token_masks = (input_ids == step_sep_id)
+
+# Output your step-level process rewards
 step_reward = make_step_rewards(outputs[0], token_masks)
 
 print(step_reward[0])
