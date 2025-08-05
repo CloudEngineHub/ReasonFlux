@@ -17,8 +17,8 @@
 
 ## 🚀 What Makes ReasonFlux Series Special?
 
-### 1. Trajectory-Aware Process Reward Models (ReasonFlux-PRM)
-Trajectory-aware reward models that provide dense supervision for both offline data selection and online policy optimization.
+### 1. Trajectory-Aware Process Reward Models for Long-CoT Reasoning (ReasonFlux-PRM)
+Trajectory-aware reward models that provide dense supervision for both offline data selection and online policy optimization in long-CoT reasoning.
 <p align="center">
 <img src="./ReasonFlux_PRM/img/intro_res.png" width=100%>
 </p>
@@ -29,7 +29,7 @@ Innovative approach where coders and unit testers evolve together through reinfo
 <img src="./ReasonFlux_Coder/figures/overviewplot.png" width=100%>
 </p>
 
-### 3. Long CoT Reasoning with Thought Templates (ReasonFlux V1/F1/V2)
+### 3. Long-CoT Reasoning with Thought Templates (ReasonFlux V1/F1/V2)
 Revolutionary hierarchical reasoning framework that uses thought templates to guide complex problem-solving, achieving SOTA performance with higher efficiency.
 <p align="center">
 <img src="./figs/comparison.png" width=100%>
