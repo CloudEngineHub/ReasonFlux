@@ -1,6 +1,6 @@
 # 🧠 ReasonFlux Series
 ### *Advanced Open-Source LLM Post-Training Suite*
-**Princeton University** \& **PKU** \& **UIUC** \& **University of Chicago** \& **ByteDance TopSeed**
+**Princeton University** \& **PKU** \& **UIUC** \& **University of Chicago** \& **ByteDance Seed**
 
 **🎯 Mission**: Building next-generation reasoning capabilities through innovative LLM post-training algorithms focusing on **data selection**, **reinforcement learning**, and **inference scaling**.
 
@@ -10,31 +10,29 @@
 - [Model Family Guide](#model-family-guide)
   - [ReasonFlux-PRM](./ReasonFlux_PRM/README.md)
   - [ReasonFlux-Coder](https://github.com/Gen-Verse/CURE)
-  - [ReasonFlux-v2](./ReasonFlux_v2/README.md)
-  - [ReasonFlux-F1](./ReasonFlux_F1/README.md)
-  - [ReasonFlux-v1](./ReasonFlux_v1/README.md)
+  - [ReasonFlux-v1](./ReasonFlux_v1/README.md), [ReasonFlux-F1](./ReasonFlux_F1/README.md), [ReasonFlux-v2](./ReasonFlux_v2/README.md)
   - [Preliminary Work on Thought Template](#preliminary-work-on-thought-template)
 - [Performance Hightlights](#performance-highlights)
 - [Citation](#citation)
 
 ## 🚀 What Makes ReasonFlux Series Special?
 
-### 1. Long CoT Reasoning with Thought Templates (ReasonFlux V1/F1/V2)
-Revolutionary hierarchical reasoning framework that uses thought templates to guide complex problem-solving, achieving SOTA performance with higher efficiency.
-<p align="center">
-<img src="./figs/comparison.png" width=100%>
-</p>
-
-### 2. Trajectory-Aware Process Reward Models (ReasonFlux-PRM)
+### 1. Trajectory-Aware Process Reward Models (ReasonFlux-PRM)
 Trajectory-aware reward models that provide dense supervision for both offline data selection and online policy optimization.
 <p align="center">
 <img src="./ReasonFlux_PRM/img/intro_res.png" width=100%>
 </p>
 
-### 3. Co-Evolved RL for LLM Coder and Unit Tester (ReasonFlux-Coder)
+### 2. Co-Evolved RL for LLM Coder and Unit Tester (ReasonFlux-Coder)
 Innovative approach where coders and unit testers evolve together through reinforcement learning, creating more robust coding capabilities.
 <p align="center">
 <img src="./ReasonFlux_Coder/figures/overviewplot.png" width=100%>
+</p>
+
+### 3. Long CoT Reasoning with Thought Templates (ReasonFlux V1/F1/V2)
+Revolutionary hierarchical reasoning framework that uses thought templates to guide complex problem-solving, achieving SOTA performance with higher efficiency.
+<p align="center">
+<img src="./figs/comparison.png" width=100%>
 </p>
 
 ## Preliminary Work on Thought Template
@@ -42,8 +40,6 @@ Our ReasonFlux-V1/F1/V2 models are built upon insights from our preliminary work
 
 
 ## Updates
-
-- [2025/7/3] 🎉 We release the [DPO dataset](https://huggingface.co/datasets/Gen-Verse/ReasonFlux-V2-Reasoner-DPO) for Template Reasoner of [ReasonFlux-V2](./ReasonFlux_v2/README.md).
 
 - [2025/6/23] 🎉 We introduce [**ReasonFlux-PRM**](https://arxiv.org/abs/2506.18896), a family of trajectory-aware process reward models (PRMs) for long CoT reasoning in LLMs. ReasonFlux-PRM is able to support **both offline and online reward supervision**, by selecting high-quality training data for model distillation, providing dense process-level rewards for policy optimization during reinforcement learning, and enabling reward-guided test-time scaling. 
 Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-7B) and [ReasonFlux-PRM-1.5B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-1.5B) are now available on [HuggingFace-GenX](https://huggingface.co/Gen-Verse). We also release a 7B advanced thinking and reasoning model [ReasonFlux-PRM-Qwen-2.5-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-Qwen-2.5-7B) supervised via our PRM.
@@ -57,38 +53,7 @@ Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/
 
 ## Model Family Guide
 
-### 🧠 **Reasoning Models**
 
-<table>
-<tr>
-<th>Model</th>
-<th>Size</th>
-<th>Key Features</th>
-<th>Best For</th>
-<th>Download</th>
-</tr>
-<tr>
-<td><strong>ReasonFlux-V2</strong></td>
-<td>32B</td>
-<td>• Template Proposer + Reasoner<br/>• Iterative Hierarchical RL<br/>• SOTA Performance</td>
-<td>Complex mathematical reasoning</td>
-<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer">🤗 Proposer</a><br/><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner">🤗 Reasoner</a></td>
-</tr>
-<tr>
-<td><strong>ReasonFlux-F1</strong></td>
-<td>7B/14B/32B</td>
-<td>• Template-augmented trajectories<br/>• Efficient training<br/>• Multiple sizes</td>
-<td>General reasoning tasks</td>
-<td><a href="https://huggingface.co/collections/Gen-Verse/reasonflux-series-67e8ebd46c7216f5bf8c2421">🤗 Models</a></td>
-</tr>
-<tr>
-<td><strong>ReasonFlux-V1</strong></td>
-<td>32B</td>
-<td>• Hierarchical reasoning<br/>• Template library<br/>• Foundation model</td>
-<td>Research & development</td>
-<td><a href="#">🤗 Model</a></td>
-</tr>
-</table>
 
 ### 🎯 **Process Reward Models**
 
@@ -154,6 +119,40 @@ Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/
 <td>• Long-CoT reasoning<br/>• Compact size<br/>• Unit test focused</td>
 <td>64.8% efficiency in unit test generation</td>
 <td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-Coder-4B">🤗 4B</a></td>
+</tr>
+</table>
+
+
+### 🧠 **Reasoning Models**
+
+<table>
+<tr>
+<th>Model</th>
+<th>Size</th>
+<th>Key Features</th>
+<th>Best For</th>
+<th>Download</th>
+</tr>
+<tr>
+<td><strong>ReasonFlux-V2</strong></td>
+<td>32B</td>
+<td>• Template Proposer + Reasoner<br/>• Iterative Hierarchical RL<br/>• SOTA Performance</td>
+<td>Complex mathematical reasoning</td>
+<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer">🤗 Proposer</a><br/><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner">🤗 Reasoner</a></td>
+</tr>
+<tr>
+<td><strong>ReasonFlux-F1</strong></td>
+<td>7B/14B/32B</td>
+<td>• Template-augmented trajectories<br/>• Efficient training<br/>• Multiple sizes</td>
+<td>General reasoning tasks</td>
+<td><a href="https://huggingface.co/collections/Gen-Verse/reasonflux-series-67e8ebd46c7216f5bf8c2421">🤗 Models</a></td>
+</tr>
+<tr>
+<td><strong>ReasonFlux-V1</strong></td>
+<td>32B</td>
+<td>• Hierarchical reasoning<br/>• Template library<br/>• Foundation model</td>
+<td>Research & development</td>
+<td><a href="#">🤗 Model</a></td>
 </tr>
 </table>
 
