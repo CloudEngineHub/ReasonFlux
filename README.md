@@ -10,7 +10,7 @@
 - [Model Family Guide](#model-family-guide)
   - [ReasonFlux-PRM **(NeurIPS 2025)**](./ReasonFlux_PRM/README.md)
   - [ReasonFlux-Coder **(NeurIPS 2025 Spotlight)**](https://github.com/Gen-Verse/CURE)
-  - [ReasonFlux-v1](./ReasonFlux_v1/README.md), [ReasonFlux-F1](./ReasonFlux_F1/README.md), [ReasonFlux-v2](./ReasonFlux_v2/README.md)
+  - [ReasonFlux](./ReasonFlux/README.md)
   - [Preliminary Work on Thought Template **(NeurIPS 2024 Spotlight)**](#preliminary-work-on-thought-template)
 - [Performance Hightlights](#performance-highlights)
 - [Citation](#citation)
@@ -29,27 +29,25 @@ Innovative approach where coders and unit testers evolve together through reinfo
 <img src="./ReasonFlux_Coder/figures/overviewplot.png" width=100%>
 </p>
 
-### 3. Long-CoT Reasoning with Thought Templates (ReasonFlux V1/F1/V2)
+### 3. Long-CoT Reasoning with Thought Templates (ReasonFlux-Zero/F1)
 Revolutionary hierarchical reasoning framework that uses thought templates to guide complex problem-solving, achieving SOTA performance with higher efficiency.
+
 <p align="center">
 <img src="./figs/comparison.png" width=100%>
 </p>
 
+
 ## Preliminary Work on Thought Template
-Our ReasonFlux-V1/F1/V2 models are built upon insights from our preliminary work on thought templates—specifically, [Buffer of Thoughts (NeurIPS 2024 Spotlight)](https://openreview.net/forum?id=ANO1i9JPtb) and [SuperCorrect (ICLR 2025)](https://openreview.net/forum?id=PyjZO7oSw2). These works introduce high-level, efficient intermediate reasoning patterns that guide and structure the thinking process of large language models.
+Our ReasonFlux-Zero/F1 models are built upon insights from our preliminary work on thought templates—specifically, [Buffer of Thoughts (NeurIPS 2024 Spotlight)](https://openreview.net/forum?id=ANO1i9JPtb) and [SuperCorrect (ICLR 2025)](https://openreview.net/forum?id=PyjZO7oSw2). These works introduce high-level, efficient intermediate reasoning patterns that guide and structure the thinking process of large language models.
 
 
 ## Updates
 
 - [2025/6/23] 🎉 We introduce [**ReasonFlux-PRM**](https://arxiv.org/abs/2506.18896), a family of trajectory-aware process reward models (PRMs) for long CoT reasoning in LLMs. ReasonFlux-PRM is able to support **both offline and online reward supervision**, by selecting high-quality training data for model distillation, providing dense process-level rewards for policy optimization during reinforcement learning, and enabling reward-guided test-time scaling. 
 Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-7B) and [ReasonFlux-PRM-1.5B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-1.5B) are now available on [HuggingFace-GenX](https://huggingface.co/Gen-Verse). We also release a 7B advanced thinking and reasoning model [ReasonFlux-PRM-Qwen-2.5-7B](https://huggingface.co/Gen-Verse/ReasonFlux-PRM-Qwen-2.5-7B) supervised via our PRM.
-
 - [2025/6/04] 🎉 We release our [**Co-Evolving RL**](https://github.com/Gen-Verse/CURE) optimized coding LLMs, [ReasonFlux-Coder-7B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-7B) and [ReasonFlux-Coder-14B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-14B), which outperform similarly sized Qwen Coders and DeepSeek Coders, and naturally fit into common test-time scaling and agentic coding pipelines. We also release our Long-CoT model [ReasonFlux-Coder-4B](https://huggingface.co/Gen-Verse/ReasonFlux-Coder-4B), outperforming Qwen3-4B while achieving 64.8% efficiency in unit test generation.
-- [2025/5/26] 🎉 We open-source the model weights, training & evaluation scripts for [ReasonFlux-V2](./ReasonFlux_v2/README.md). **We will release our ReasonFlux-V2 paper soon.**
-- [2025/5/26] 🎉We release **ReasonFlux-V2-32B**, an effective template-augmented reasoning paradigm including [Template Proposer](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer) and [Template Reasoner](https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner),  which internalizes thought template through iterative hierarchical reinforcement learning. It has achieved SOTA-Level performance with less token consumption.
 - [2025/3/24] 🎉We release [ReasonFlux-F1-32B](https://huggingface.co/Gen-Verse/ReasonFlux-F1), [ReasonFlux-F1-14B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-14B), [ReasonFlux-F1-7B](https://huggingface.co/Gen-Verse/ReasonFlux-F1-7B), a series of SOTA-level reasoning LLMs by leveraging the template-augmented reasoning trajectories collected from our ReasonFlux-Zero. For the training and evaluation scripts, please refer to [reasonflux-f1/README.md](./reasonflux-f1/README.md) for detail.
-- [2025/2/11] 🎉We release the data, training scripts for SFT stage and demo inference code along with template library of ReasonFlux-v1.
-- [2025/2/11]🎉We propose [ReasonFlux-v1](https://arxiv.org/abs/2502.06772), a hierarchical LLM reasoning framework that significantly enhances complex reasoning capabilities, outperforming SOTA models like o1-preview and DeepSeek-V3 on challenging MATH and AIME benchmarks.
+- [2025/2/11]🎉We propose [ReasonFlux-Zero](https://arxiv.org/abs/2502.06772), a hierarchical LLM reasoning framework that significantly enhances complex reasoning capabilities, outperforming SOTA models like o1-preview and DeepSeek-V3 on challenging MATH and AIME benchmarks.
 
 ## Model Family Guide
 
@@ -134,13 +132,6 @@ Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/
 <th>Download</th>
 </tr>
 <tr>
-<td><strong>ReasonFlux-V2</strong></td>
-<td>32B</td>
-<td>• Template Proposer + Reasoner<br/>• Iterative Hierarchical RL<br/>• SOTA Performance</td>
-<td>Complex mathematical reasoning</td>
-<td><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Proposer">🤗 Proposer</a><br/><a href="https://huggingface.co/Gen-Verse/ReasonFlux-V2-32B-Reasoner">🤗 Reasoner</a></td>
-</tr>
-<tr>
 <td><strong>ReasonFlux-F1</strong></td>
 <td>7B/14B/32B</td>
 <td>• Template-augmented trajectories<br/>• Efficient training<br/>• Multiple sizes</td>
@@ -148,7 +139,7 @@ Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/
 <td><a href="https://huggingface.co/collections/Gen-Verse/reasonflux-series-67e8ebd46c7216f5bf8c2421">🤗 Models</a></td>
 </tr>
 <tr>
-<td><strong>ReasonFlux-V1</strong></td>
+<td><strong>ReasonFlux-Zero</strong></td>
 <td>32B</td>
 <td>• Hierarchical reasoning<br/>• Template library<br/>• Foundation model</td>
 <td>Research & development</td>
@@ -156,36 +147,20 @@ Our trained PRMs including [ReasonFlux-PRM-7B](https://huggingface.co/Gen-Verse/
 </tr>
 </table>
 
+
 ## Performance Highlights
 
 ### 1. Complex Reasoning
 
-| Model                           | MATH-500 | AIME 2024 | AIME 2025 | GQPA-Diamond |
-| ------------------------------- | -------- | --------- | --------- | ------------ |
-| **Frontier LLMs**               |          |           |           |              |
-| OpenAI-o1-2024-12-17            | 94.8     | 74.3      | 79.2      | –            |
-| OpenAI-o3-mini (medium)         | 96.8     | 79.6      | 74.8      | 76.8         |
-| Grok3 Beta                      | 96.6     | 83.9      | 77.3      | –            |
-| Gemini 2.5-Pro                  | 98.4     | 92.0      | 86.7      | 84.0         |
-| **Open-Sourced Reasoning LLMs** |          |           |           |              |
-| DeepSeek-R1-Distill-7B          | 83.3     | 55.5      | 23.3      | 49.1         |
-| DeepSeek-R1-Distill-14B         | 93.9     | 69.7      | 26.7      | 59.1         |
-| DeepSeek-R1-Distill-32B         | 94.3     | 72.6      | 53.3      | 62.1         |
-| DeepSeek-R1-Distill-70B         | 94.5     | 70.0      | 56.7      | 65.2         |
-| DeepSeek-R1-67B                 | 97.3     | 79.8      | 70.0      | 71.5         |
-| QwQ-32B-Preview                 | 90.6     | 50.0      | 46.7      | 65.2         |
-| QwQ-32B                         | 97.6     | 80.0      | 63.3      | 68.2        |
-| Qwen3-32B                       | 96.6     | 81.4      | 72.9      | 69.2        |
-| Qwen3-30B-A3B                   | 96.8     | 80.4      | 70.9      | 65.8         |
-| Qwen3-235B-A22B                 | 97.6     | 85.7      | **81.5**  | –            |
-| Sky-T1-32B                      | 86.4     | 43.3      | 36.7      | 56.8         |
-| LIMO-32B                        | 56.7    | 33.3      | 92.2      | 58.8         |
-| s1.1-32B                        | 93.1     | 60.0      | 60.0      | 63.1         |
-| OpenThinker-32B                 | 94.8     | 63.3      | 46.7     | 60.1         |
-| Light-R1-32B                    | 96.2     | 78.1      | 68.0      | 60.1         |
-| **ReasonFlux-V1 (2025-1)**      | 91.2 | 56.7  | 37.2  | 61.2     |
-| **ReasonFlux-F1 (2025-3）**     | 96.0 | 76.7  | 53.3  | 67.2     |
-| **ReasonFlux-V2 (2025-5)**      | **97.8** | **86.7**  | 76.7  | **71.2**     |
+| Model                 | AIME2024@pass1 | AIME2025@pass1 | MATH500@pass1 | GPQA@pass1 |
+| --------------------- | :------------: | :------------: | :-----------: | :--------: |
+| QwQ-32B-Preview       |      46.7      |      37.2      |     90.6      |    65.2    |
+| LIMO-32B              |      56.3      |      44.5      |     94.8      |    58.1    |
+| s1-32B                |      56.7      |      49.3      |     93.0      |    59.6    |
+| OpenThinker-32B       |      66.0      |      53.3      |     94.8      |    60.1    |
+| R1-Distill-32B        |      70.0      |      46.7      |     92.0      |    59.6    |
+| ReasonFlux-Zero-32B   |      56.7      |      37.2      |     91.2      |    61.2    |
+| **ReasonFlux-F1-32B** |    **76.7**    |    **53.3**    |   **96.0**    |  **67.2**  |
 
 
 ### 2. Code Generation and Reasoning
